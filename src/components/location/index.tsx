@@ -11,6 +11,7 @@ export interface IDndLocation {
   readonly id: string;
   readonly locations?: IDndLocation[];
   readonly exteriorImageUrl?: string;
+  readonly exteriorMapUrl?: string;
   readonly interiorImageUrl?: string;
   readonly interiorMapUrl?: string;
 }
@@ -58,6 +59,7 @@ const DndLocation = ({
     locations,
     geography,
     exteriorImageUrl,
+    exteriorMapUrl,
     interiorImageUrl,
     interiorMapUrl,
   },
@@ -88,16 +90,42 @@ const DndLocation = ({
         </div>
       )}
 
-      <div>
-        <h3>NPCs</h3>
-        <Collapsible id={""} text={`${name} NPCs`}>
-          <div style={subContainer}>
-            {people.map((person) => (
-              <NPC key={person.id} npc={person} />
-            ))}
-          </div>
+      {people.length > 0 && (
+        <>
+          <h3>NPCs</h3>
+          <Collapsible id={""} text={`${name} NPCs`}>
+            <div style={subContainer}>
+              {people.map((person) => (
+                <NPC key={person.id} npc={person} />
+              ))}
+            </div>
+          </Collapsible>
+        </>
+      )}
+
+      {!!exteriorImageUrl && (
+        <Collapsible id={""} text={"Image extérieure"}>
+          <img src={exteriorImageUrl} alt="" />
         </Collapsible>
-      </div>
+      )}
+
+      {!!exteriorMapUrl && (
+        <Collapsible id={""} text={"Carte extérieure"}>
+          <img src={exteriorMapUrl} alt="" />
+        </Collapsible>
+      )}
+
+      {!!interiorImageUrl && (
+        <Collapsible id={""} text={"Image intérieure"}>
+          <img src={interiorImageUrl} alt="" />
+        </Collapsible>
+      )}
+
+      {!!interiorMapUrl && (
+        <Collapsible id={""} text={"Carte intérieure"}>
+          <img src={interiorMapUrl} alt="" />
+        </Collapsible>
+      )}
     </div>
   );
 };

@@ -79,6 +79,12 @@ const NPC = ({
           ))}
         </div>
       </Collapsible>
+
+      {!!imageUrl && (
+        <Collapsible id={""} text={"Image"}>
+          <img src={imageUrl} alt="" />
+        </Collapsible>
+      )}
     </div>
   );
 };
