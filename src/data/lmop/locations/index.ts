@@ -8,6 +8,8 @@ import {
   SISTER_GARAELE,
   SILDAR,
   KLARG,
+  HALIA,
+  QUELINE,
 } from "../NPCs/index";
 
 export const STONEHILL_INN: IDndLocation = {
@@ -37,20 +39,6 @@ export const TOWNMASTER_HALL: IDndLocation = {
     "https://www.scabard.com/user/Tizzygill/image/townmasters-hall-v3.png",
 };
 
-export const PHANDALIN: IDndLocation = {
-  id: "PHANDALIN",
-  name: "Phandalin",
-  description:
-    "In the late 15th century DR, Phandalin was a modest and architecturally boring town of farmers, woodcutters, trappers, and miners built atop the ruins of the old Phandalin. The town quickly grew to about fifty well-maintained structures built of logs and flagstones with three deep wells providing water. The town was dominated by an apple orchard on the west side and a ruined manor atop a hill to the east. The townsfolk would congregate in a small town square and an adjacent town green.",
-  geography: `Phandalin was located in the northern foothills of the Sword Mountains south of Neverwinter Wood. It was northeast of Leilon where the road that ran from the High Road to Triboar faded into a trail. This was a region rich with both natural resources and adventuring opportunities. The climate was temperate with an average yearly rainfall of 18 inches (46 centimeters).`,
-  people: [TOBLEN, BARTHEN, BLACK_SPIDER, ELSA, HARBIN, SISTER_GARAELE, SILDAR],
-  locations: [STONEHILL_INN, TOWNMASTER_HALL],
-  exteriorImageUrl:
-    "https://www.worldanvil.com/media/cache/cover/uploads/images/b2db99d7d353b54caf360ca2d4cd8dff.jpg",
-  exteriorMapUrl:
-    "https://cdnb.artstation.com/p/assets/images/images/039/602/327/large/maps-on-fire-phandalin-gm-map.jpg",
-};
-
 export const CRAGMAW_HIDEOUT: IDndLocation = {
   id: "CRAGMAW_HIDEOUT",
   name: "Cragmaw Hideout",
@@ -58,4 +46,39 @@ export const CRAGMAW_HIDEOUT: IDndLocation = {
     "The entrance to the cave complex was under a large hill, and had a shallow stream flowing out of it. It had four main rooms and several smaller trails linking them. There was also two large pools of water, which could be released to cause a flood. A crudely made bridge linked the room at the end of the river to the second-in-command's room, where prisoners were also kept.",
   geography: `Cave to the north (east) of Phandalin, north of the Triboar Trail.  Entrance is narrow with running water`,
   people: [KLARG, SILDAR],
+  loot: [
+    "Matériel portant l'image du Lionshield Coster, requiert un charieau pour transporter",
+    "Treasure chest: 600cp, 110sp, deux potions de santé, une statuette de jade d'une grenouille avec trois orbes en or (40gp)",
+  ],
+};
+
+export const ALDERLEAF_FARM: IDndLocation = {
+  id: "ALDERLEAF_FARM",
+  name: "Alderleaf Farm",
+  description: "Petite ferme de patate et mouton",
+  geography: "",
+  people: [QUELINE],
+};
+
+export const PHANDALIN: IDndLocation = {
+  id: "PHANDALIN",
+  name: "Phandalin",
+  description:
+    "À la fin du 15ème siècle, Phandalin était un modeste et architecturalement peu intéressantvillage d'agriculteurs, de bûcherons, de trappeurs et de mineurs construit au sommet des ruines de l'ancien Phandalin.  La ville s'est rapidement retrouvé avec une cinquantaine de structures bien entretenues construites en rondins et en dalles avec trois puits profonds fournissant de l'eau. La ville était dominée par un verger de pommiers à l'ouest et un manoir en ruine au sommet d'une colline à l'est. Les habitants se rassemblaient dans un petit carré au centre de la ville.",
+  geography: `Phandalin was located in the northern foothills of the Sword Mountains south of Neverwinter Wood. It was northeast of Leilon where the road that ran from the High Road to Triboar faded into a trail. This was a region rich with both natural resources and adventuring opportunities. The climate was temperate with an average yearly rainfall of 18 inches (46 centimeters).`,
+  people: [
+    TOBLEN,
+    BARTHEN,
+    BLACK_SPIDER,
+    ELSA,
+    HARBIN,
+    SISTER_GARAELE,
+    SILDAR,
+    HALIA,
+  ],
+  locations: [STONEHILL_INN, TOWNMASTER_HALL, ALDERLEAF_FARM],
+  exteriorImageUrl:
+    "https://www.worldanvil.com/media/cache/cover/uploads/images/b2db99d7d353b54caf360ca2d4cd8dff.jpg",
+  exteriorMapUrl:
+    "https://cdnb.artstation.com/p/assets/images/images/039/602/327/large/maps-on-fire-phandalin-gm-map.jpg",
 };

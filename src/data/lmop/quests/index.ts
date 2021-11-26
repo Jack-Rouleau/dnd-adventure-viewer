@@ -12,7 +12,7 @@ export const ESCORT_SILDAR: IQuest = {
   id: "ESCORT_SILDAR",
   title: "Escort Sildar to Phandalin",
   text: "After finding Sildar Hallwinter in the Cragmaw Hideout near the Triboar Trail, you were compensated 50 GP total for providing safe passage from the enemy to the relative safety of Phandalin.",
-  experience: 50,
+  experience: 100,
   rewards: ["50gp", "Friendly with Sildar"],
 };
 
@@ -28,7 +28,7 @@ export const FIND_IARNO: IQuest = {
   id: "FIND_IARNO",
   title: "Find Iarno",
   text: "Sildar has tasked any willing persons to learn of the definitive whereabouts of his fellow Lord’s Alliance member. He has asked that those interested investigate the town of Phandalin and return anything of Iarno they can. Iarno is described as a short, dark-bearded human wizard in his 30s. He will reward 200 GP for this information and/or rescue.",
-  experience: 0,
+  experience: 100,
   rewards: ["200gp", "Honored with Sildar"],
 };
 
@@ -37,7 +37,7 @@ export const STOP_REBRANDS: IQuest = {
   title: "Stop the Redbrands",
   text: "Many of those in the town of Phandalin wish a return to normalcy (and normal trade), but with the Redbrands holding the town in a stranglehold there is little hope. Several tradespeople urge the adventurers to put an end to the menace so that they can be properly rewarded.",
   experience: 0,
-  rewards: ["tbd"],
+  rewards: ["100 gp"],
 };
 
 export const RESCUE_GUNDREN: IQuest = {

@@ -12,11 +12,15 @@ export interface IIndexPageProps {
   readonly locations: IDndLocation[];
 }
 
+const wrapperStyle: React.CSSProperties = {
+  marginBottom: "10rem",
+};
+
 const IndexPage = () => {
   const [role, setRole] = React.useState(undefined as Role);
   const locations = React.useMemo(() => [PHANDALIN, CRAGMAW_HIDEOUT], []);
   return (
-    <div>
+    <div style={wrapperStyle}>
       {role === Role.Admin && <Campaign locations={locations} />}
       {role === Role.Player && <Player />}
       {role == undefined && <Login setRoleOnLogin={setRole} />}

@@ -1,19 +1,20 @@
 import { CSSProperties } from "react";
 import * as React from "react";
-import NPC, { IPeople } from "../npc";
+import NPC, { INpc } from "../npc";
 import Collapsible from "../collapsible";
 
 export interface IDndLocation {
   readonly name: string;
   readonly description: string;
   readonly geography: string;
-  readonly people: IPeople[];
+  readonly people: INpc[];
   readonly id: string;
   readonly locations?: IDndLocation[];
   readonly exteriorImageUrl?: string;
   readonly exteriorMapUrl?: string;
   readonly interiorImageUrl?: string;
   readonly interiorMapUrl?: string;
+  readonly loot?: string[];
 }
 
 export interface IDndLocationProps {
@@ -55,6 +56,7 @@ const DndLocation = ({
     name,
     description,
     people,
+    loot,
     id,
     locations,
     geography,
@@ -97,6 +99,19 @@ const DndLocation = ({
             <div style={subContainer}>
               {people.map((person) => (
                 <NPC key={person.id} npc={person} />
+              ))}
+            </div>
+          </Collapsible>
+        </>
+      )}
+
+      {loot && loot.length > 0 && (
+        <>
+          <h3>Loot</h3>
+          <Collapsible id={""} text={`${name} Loot`}>
+            <div style={subContainer}>
+              {loot.map((item) => (
+                <div>{item}</div>
               ))}
             </div>
           </Collapsible>

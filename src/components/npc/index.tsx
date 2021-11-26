@@ -3,7 +3,7 @@ import * as React from "react";
 import Quest, { IQuest } from "../quest";
 import Collapsible from "../collapsible";
 
-export interface IPeople {
+export interface INpc {
   readonly name: string;
   readonly description: string;
   readonly id: string;
@@ -14,7 +14,7 @@ export interface IPeople {
 }
 
 export interface IPeopleProps {
-  readonly npc: IPeople;
+  readonly npc: INpc;
 }
 
 const containerStyle: CSSProperties = {
