@@ -10,7 +10,13 @@ import {
   KLARG,
   HALIA,
   QUELINE,
+  DARAN,
+  REDBRAND_THUGS,
+  MIRNA,
+  GLASSSTAFF,
+  NOTHIC,
 } from "../NPCs/index";
+import { ESCORT_SILDAR } from "../quests";
 
 export const STONEHILL_INN: IDndLocation = {
   id: "STONEHILL_INN",
@@ -60,6 +66,48 @@ export const ALDERLEAF_FARM: IDndLocation = {
   people: [QUELINE],
 };
 
+export const SHRINE_OF_LUCK: IDndLocation = {
+  id: "SHRINE_OF_LUCK",
+  name: "Shrine of Luck",
+  description:
+    "Petit temple construit à partir des roches prisent dans les ruines de l'ancien Phandalin.  Dédié à Tymora, déesse de la chance",
+  geography: "",
+  people: [SISTER_GARAELE],
+};
+
+export const MINER_EXCHANGE: IDndLocation = {
+  id: "MINER_EXCHANGE",
+  name: "Miner's exchange",
+  description: "Trading post pour les mineurs, peser, evaluation, etc.",
+  geography: "",
+  people: [HALIA],
+};
+
+export const EDERMATH_ORCHARD: IDndLocation = {
+  id: "EDERMATH_ORCHARD",
+  name: "Edermath Orchard",
+  description: "Petit verger avec une petite maison",
+  geography: "",
+  people: [DARAN],
+};
+
+export const SLEEPING_GIANT: IDndLocation = {
+  id: "SLEEPING_GIANT",
+  name: "Sleeping Giant",
+  description: "Taverne dangereuse",
+  geography: "",
+  people: [REDBRAND_THUGS],
+};
+
+export const TRESENDAR_MANOR: IDndLocation = {
+  id: "TRESENDAR_MANOR",
+  name: "Manoir de Tresendar",
+  description:
+    "Plus chateau que maison, ce trouve à l'est de la ville.  L'ancien manoir est depuis longtemps abandonner",
+  geography: "",
+  people: [GLASSSTAFF, NOTHIC, MIRNA],
+};
+
 export const PHANDALIN: IDndLocation = {
   id: "PHANDALIN",
   name: "Phandalin",
@@ -76,7 +124,16 @@ export const PHANDALIN: IDndLocation = {
     SILDAR,
     HALIA,
   ],
-  locations: [STONEHILL_INN, TOWNMASTER_HALL, ALDERLEAF_FARM],
+  locations: [
+    STONEHILL_INN,
+    TOWNMASTER_HALL,
+    ALDERLEAF_FARM,
+    MINER_EXCHANGE,
+    SHRINE_OF_LUCK,
+    EDERMATH_ORCHARD,
+    SLEEPING_GIANT,
+    TRESENDAR_MANOR,
+  ],
   exteriorImageUrl:
     "https://www.worldanvil.com/media/cache/cover/uploads/images/b2db99d7d353b54caf360ca2d4cd8dff.jpg",
   exteriorMapUrl:

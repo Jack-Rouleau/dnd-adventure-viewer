@@ -11,6 +11,7 @@ export interface INpc {
   readonly imageUrl?: string;
   readonly informations: string[];
   readonly possessions?: string[];
+  readonly quotes?: string[];
 }
 
 export interface IPeopleProps {
@@ -54,8 +55,23 @@ const informationContainer: CSSProperties = {
   fontWeight: "thin",
 };
 
+const subContainer: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "2rem",
+};
+
 const NPC = ({
-  npc: { name, description, id, quests, informations, imageUrl },
+  npc: {
+    name,
+    description,
+    id,
+    quests,
+    informations,
+    imageUrl,
+    quotes,
+    possessions,
+  },
 }: IPeopleProps) => {
   return (
     <div style={containerStyle} id={id}>
@@ -64,26 +80,54 @@ const NPC = ({
         <span>{description}</span>
       </div>
 
-      <Collapsible id={""} text={`Quests`}>
-        <div style={questContainer}>
-          {quests.map((quest) => (
-            <Quest key={quest.id} quest={quest} />
-          ))}
-        </div>
-      </Collapsible>
+      {quests && quests.length > 0 && (
+        <Collapsible id={""} text={`Quests`}>
+          <div style={questContainer}>
+            {quests.map((quest) => (
+              <Quest key={quest.id} quest={quest} />
+            ))}
+          </div>
+        </Collapsible>
+      )}
 
-      <Collapsible id={""} text={`Informations`}>
-        <div style={informationContainer}>
-          {informations.map((information) => (
-            <div>{information}</div>
-          ))}
-        </div>
-      </Collapsible>
+      {informations && informations.length && (
+        <Collapsible id={""} text={`Informations`}>
+          <div style={informationContainer}>
+            {informations.map((information) => (
+              <div>{information}</div>
+            ))}
+          </div>
+        </Collapsible>
+      )}
 
       {!!imageUrl && (
         <Collapsible id={""} text={"Image"}>
           <img src={imageUrl} alt="" />
         </Collapsible>
+      )}
+
+      {quotes && quotes.length > 0 && (
+        <>
+          <Collapsible id={""} text={`Quotes`}>
+            <div style={subContainer}>
+              {quotes.map((item) => (
+                <div>{item}</div>
+              ))}
+            </div>
+          </Collapsible>
+        </>
+      )}
+
+      {possessions && possessions.length > 0 && (
+        <>
+          <Collapsible id={""} text={`Possessions`}>
+            <div style={subContainer}>
+              {possessions.map((item) => (
+                <div>{item}</div>
+              ))}
+            </div>
+          </Collapsible>
+        </>
       )}
     </div>
   );

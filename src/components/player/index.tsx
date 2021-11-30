@@ -1,5 +1,6 @@
-import { CSSProperties } from "react";
+import "./index.scss";
 import * as React from "react";
+import Informations from "./informations";
 
 export enum SavingThrows {
   Strength = "Strength",
@@ -33,7 +34,8 @@ export enum Skills {
 
 export interface IPlayer {
   readonly name: string;
-  readonly class: string;
+  readonly playerName: string;
+  readonly characterClass: string;
   readonly background: string;
   readonly race: string;
   readonly allignment: string;
@@ -56,67 +58,61 @@ export interface IPlayer {
   readonly flaws: string[];
   readonly inventory: string[];
   readonly armorProficiencies: string[];
+  readonly weaponProficiencies: string[];
   readonly otherProficiencies: string[];
   readonly hasInspiration: boolean;
   readonly features: string[];
   readonly profienciencyBonus: number;
   readonly savingThrows: SavingThrows[];
   readonly skills: Skills[];
+  readonly languagues: string[];
 }
 
-// const example: IPlayer = {
-//   name: "",
-//   class: "",
-//   background: "",
-//   race: "",
-//   allignment: "",
-//   experience: "",
-//   strength: 0,
-//   dexterity: 0,
-//   constitution: 0,
-//   intelligence: 0,
-//   wisdom: 0,
-//   charisma: 0,
-//   maximumHitPoints: 0,
-//   currentHitPoints: 0,
-//   armorClass: 0,
-//   initiative: 0,
-//   speed: 0,
-//   hitDice: "",
-//   personalityTraits: ["First", "Second"],
-//   ideals: ["", ""],
-//   bonds: ["", ""],
-//   flaws: ["", ""],
-//   inventory: ["", ""],
-//   armorProficiencies: ["", ""],
-//   otherProficiencies: ["", ""],
-//   hasInspiration: false,
-//   features: ["", ""],
-//   profienciencyBonus: 2,
-//   savingThrows: ["Strength", "Dexterity"],
-//   skills: ["Animal Handling", "Perception"],
-// };
+export interface IPlayerProps {
+  readonly player: IPlayer;
+}
 
-const containerStyle: CSSProperties = {
-  display: "flex",
-  backgroundColor: "black",
-  justifyContent: "center",
-  alignItems: "end",
-  width: "100vw",
-  height: "100vh",
-  background: "url('https://i.imgur.com/WvFnFSa.jpeg')",
-};
-
-const comingSoonStyle: CSSProperties = {
-  color: "white",
-  fontSize: "64px",
-  marginBottom: "15rem",
-};
-
-const Player = () => {
+const Player = ({ player: { name }, player }: IPlayerProps) => {
   return (
-    <div style={containerStyle}>
-      <span style={comingSoonStyle}>Coming soon!</span>
+    <div className="player__wrapper">
+      <div className="player__top-container">
+        <div className="player__name-container">{name}</div>
+        <Informations stats={player} />
+      </div>
+      <div className="player__bottom-container">
+        <div className="player__bottom-left-container">
+          {/* <Stats /> */}
+          <div className="player__skills-column">
+            <div className="player__inspiration"></div>
+            <div className="player__proficiency-bonus"></div>
+            {/* <SavingThrows /> */}
+            {/* <Skills /> */}
+          </div>
+          <div className="player__passive-wisdom"></div>
+          <div className="player__proficiencies-container"></div>
+        </div>
+        <div className="player__bottom-middle-container">
+          <div className="player__bottom-middle-top-container">
+            <div>
+              <div className="player__armor-class"></div>
+              <div className="player__initiative"></div>
+              <div className="player__speed"></div>
+            </div>
+            <div className="player__current-hp-container">
+              <span className="player__maximum-hit-points"></span>
+              <div></div>
+            </div>
+            <div className="player__temporary-hp"></div>
+            <div>
+              <div className="player__hit-dice"></div>
+              {/* <DeathSaves player={player}} /> */}
+            </div>
+          </div>
+          <div className="player__attacks-and-spellcasting">{/* TODO */}</div>
+          {/* <Inventory /> */}
+        </div>
+        <div className="player__right-container"></div>
+      </div>
     </div>
   );
 };

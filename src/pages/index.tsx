@@ -7,6 +7,7 @@ import Player from "../components/player";
 import Login from "../components/login";
 import "normalize.css";
 import "../index.css";
+import { GARBREK } from "../data/players";
 
 export interface IIndexPageProps {
   readonly locations: IDndLocation[];
@@ -22,8 +23,9 @@ const IndexPage = () => {
   return (
     <div style={wrapperStyle}>
       {role === Role.Admin && <Campaign locations={locations} />}
-      {role === Role.Player && <Player />}
-      {role == undefined && <Login setRoleOnLogin={setRole} />}
+      {/* {role === Role.Player && <Player />} */}
+      {role !== Role.Admin && <Login setRoleOnLogin={setRole} />}
+      {/* <Player player={GARBREK} /> */}
     </div>
   );
 };

@@ -1,9 +1,12 @@
 import { INpc } from "../../../components/npc";
 import {
   AGATHA_LAIR,
+  DEFEAT_THE_REDBRAND_THUGS,
   DELIVER_PROVISION,
   ESCORT_SILDAR,
   FIND_IARNO,
+  MIRNAS_HEIRLOOM,
+  OLD_OWL_TROUBLE,
   ORCS_WYVERN_TOR,
   RESTORE_FORGE_OF_SPELLS,
   STOP_REBRANDS,
@@ -71,13 +74,13 @@ export const SISTER_GARAELE: INpc = {
   id: "SISTER_GARAELE",
   name: "Sister Garaele",
   description:
-    "Garaele was a worshiper of Tymora, and spent much time caring for the Shrine of Luck. However, she had a strong desire to travel and do good for the people of Phandalin, and was known to leave town on adventures. She was also an agent for the Harpers for many years",
+    "Jeune elfe zelé qui désespoir de voir Phandalin sans les Redbrands",
   quests: [AGATHA_LAIR],
   imageUrl:
     "https://db4sgowjqfwig.cloudfront.net/images/3759648/tumblr_mq8rnoGZa71rfyiu4o1_500.jpg",
   informations: [
-    "Presence of a powerful dark spirit in the woods, probably remnant of an old witch",
-    "Life has been harder in the village since the Redbrands",
+    "Membre des Harpers, société disperse d'aventuriers et d'espion qui défende les l'équitté et qui s'oppose aux abus de pouvoirs",
+    "",
   ],
   possessions: ["5 healing potion"],
 };
@@ -101,7 +104,12 @@ export const SILDAR: INpc = {
     "Met with Gundren in Neverwinter and agreed to go to Phandalin with him",
     "Wants to investigate disparition of Iarno Albrek, un confrère de l'alliance du seigneur qui a disparu à son arrivé à Phandalin il y à 2 mois",
   ],
-  possessions: ["Map to Cragmaw Castle", "Healing potion", "Drift cloak"],
+  possessions: ["Map to Cragmaw Castle**", "Healing potion", "Drift cloak"],
+  quotes: [
+    "Merci à vous, aventuriers, sans vous je serais assurément dans le ventre de ces gobelins.",
+    "Il nous faut trouver Gundren!",
+    "Trouvons Klarg, il doit connaitre les réponses à nos questions",
+  ],
 };
 
 export const HARBIN: INpc = {
@@ -128,6 +136,8 @@ export const BLACK_SPIDER: INpc = {
     "https://cdn.shopify.com/s/files/1/1066/8352/articles/Drow_5e_Dungeons_and_Dragons.jpg",
   informations: [
     "Anything to gain trust of the party, she knows most/anything about the campaign",
+    "Désire aider les aventuriers dans Phandalin pour obtenir de l'information",
+    "N'apparait qu'une fois pour porter main forte au aventurier durant le premier combat contre les Redbrands",
   ],
   possessions: [
     "Spider Staff: quarterstaff of poison",
@@ -142,14 +152,18 @@ export const KLARG: INpc = {
   id: "KLARG",
   name: "Klarg the Bugbear",
   description:
-    "Harbin was pompous and pretentious.[1][4] He generally presented himself as polite[5] and friendly, but this was just for politics. In fact, he was a greedy, calculating, and two-faced businessman at heart, unafraid to push the boundaries of decency or legality to get what he wanted.[3][2] That said, he was also genuinely a fretful[5] and hapless coward when faced with dangers beyond his control.",
+    "Grand et fort bugbear avec délusion de grandeur.  Pense qu'il est un seigneur qui ne fait que débutter sa conquête.  Parle de lui même à la troisième personne",
   quests: [],
+  quotes: [
+    "QUI OSE DÉRANGER KLARG",
+    "VOS CORPS SERVIRONT À CONSTRUIRE MON TRONE",
+  ],
   imageUrl:
     "https://static.wikia.nocookie.net/plan-b/images/3/3c/Bugbear.jpg/revision/latest/top-crop/width/500/height/750",
   informations: [
     "Location of Cragmaw Castle",
-    "King Grol",
-    "Gundren was sent to Cragmaw Castle",
+    "Il à recu ordre de King Grol pour la capture de Gundren",
+    "Gundren fut envoyé au Cragmaw Castle",
     "Alliance between King Grol and the black spider",
   ],
 };
@@ -178,4 +192,67 @@ export const QUELINE: INpc = {
   informations: [
     "Mon fils, Carp, un jeune hobbit fougueux et plus vieux que son age si je dois vous l'avouer.  Le pauvre est enchanté à l'idée d'être un aventurier.  Il y a pas que 2 jours il jouait prêt des ruines du manoir Tresendar, dans les bois.  Depuis il ranconte qu'il à trouvé un tunnel secret, depuis lequel il aurait vu sortir de gros monsieur méchant tout en rouge.",
   ],
+};
+
+export const DARAN: INpc = {
+  id: "DARAN",
+  name: "Daran Edermath",
+  description:
+    "Un demi elf d'une 100 années, ancien aventurier (fighter) qui était marshall dans les terres de Dragon Coast loin au sud est",
+  informations: [
+    "Quelqu'un doit s'occupper des Redbrands et GlassStaff",
+    "Ils sont souvent au Sleeping Giant",
+    "Ils sont au manoir**",
+  ],
+  quests: [OLD_OWL_TROUBLE],
+};
+
+export const REDBRAND_THUGS: INpc = {
+  id: "REDBRAND_THUGS",
+  name: "REDBRAND_THUGS",
+  description: "4 x Rebrand Ruffian",
+  informations: [
+    "Leader est GlassStaff, un humain sorcier avec un baton en verre",
+    "Un individu connu comme le Black spider à engager les Redbrands pour effrayer aventuriers, voyageurs et les habitants de Phandalin",
+    "Des bugbears renforcent les rangs des Redbrands",
+    "Ils ont des prisonniers",
+    "Un monstre à un oeil garde la portion inférieure de leurs base d'opération",
+  ],
+  quests: [DEFEAT_THE_REDBRAND_THUGS],
+};
+
+export const MIRNA: INpc = {
+  id: "MIRNA",
+  name: "Mirna Dendrar",
+  description:
+    "Une humaine accompagner de ses deux enfants, captifs des Redbrands",
+  informations: [],
+  quests: [MIRNAS_HEIRLOOM],
+};
+
+export const GLASSSTAFF: INpc = {
+  id: "GLASSSTAFF",
+  name: "GlassStaff OU Iarno Albrek",
+  description:
+    "Humain sorcier, ancien membre de l'alliance du Seigneur.  Semble gentil et curtuous: 'Mes chères monsieur'",
+  informations: [
+    "Black spider is a drow*",
+    "Black spider à envoyer 3 bugbears pour aider les Redbrands, ceux-ci semble connaitre la location de la cave",
+    "Black spider cherche à retrouver la forge of Spells dans la cave",
+  ],
+  quests: [],
+};
+
+export const NOTHIC: INpc = {
+  id: "NOTHIC",
+  name: "Bismuth",
+  description: "Monstre à un oeil un peu fou, télépathie, pacte avec Iarno",
+  informations: [
+    "Leader est GlassStaff, un humain sorcier avec un baton en verre",
+    "Un individu connu comme le Black spider à engager les Redbrands pour effrayer aventuriers, voyageurs et les habitants de Phandalin",
+    "Des bugbears renforcent les rangs des Redbrands",
+    "Ils ont des prisonniers",
+    "Un monstre à un oeil garde la portion inférieure de leurs base d'opération",
+  ],
+  quests: [],
 };

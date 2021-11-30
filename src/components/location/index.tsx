@@ -81,7 +81,6 @@ const DndLocation = ({
 
       {locations?.length > 0 && (
         <div>
-          <h3>Locations</h3>
           <Collapsible id={""} text={`${name} locations`}>
             <div style={subContainer}>
               {locations?.map((location) => (
@@ -94,7 +93,6 @@ const DndLocation = ({
 
       {people.length > 0 && (
         <>
-          <h3>NPCs</h3>
           <Collapsible id={""} text={`${name} NPCs`}>
             <div style={subContainer}>
               {people.map((person) => (
@@ -107,7 +105,6 @@ const DndLocation = ({
 
       {loot && loot.length > 0 && (
         <>
-          <h3>Loot</h3>
           <Collapsible id={""} text={`${name} Loot`}>
             <div style={subContainer}>
               {loot.map((item) => (
