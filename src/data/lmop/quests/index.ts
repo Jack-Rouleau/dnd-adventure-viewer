@@ -15,7 +15,7 @@ export const ESCORT_SILDAR: IQuest = {
   text: "After finding Sildar Hallwinter in the Cragmaw Hideout near the Triboar Trail, you were compensated 50 GP total for providing safe passage from the enemy to the relative safety of Phandalin.",
   objectives: ["Raccompagner Sildar en vie jusqu'a Phandalin"],
   experience: 100,
-  rewards: ["50gp", "Friendly with Sildar"],
+  rewards: ["100gp", "Friendly with Sildar"],
 };
 
 export const RETRIEVE_LOST_SUPPLIES: IQuest = {

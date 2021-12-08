@@ -16,7 +16,6 @@ import {
   GLASSSTAFF,
   NOTHIC,
 } from "../NPCs/index";
-import { ESCORT_SILDAR } from "../quests";
 
 export const STONEHILL_INN: IDndLocation = {
   id: "STONEHILL_INN",
@@ -25,6 +24,14 @@ export const STONEHILL_INN: IDndLocation = {
     "Newly built in the 15th century DR, the inn was a large, two-story building was made of unrefined rocks and crudely cut wood. The villagers of Phandalin, from miners to farmers, enjoyed relaxing in the common room, which became a good place to hear local gossip and stories. The inn was kept neat and clean, and was a generally pleasant place to visit.",
   geography: "Two stories building, rest available",
   people: [TOBLEN, ELSA],
+  informations: [
+    "On sert ce soir notre spécialité, ragout au pates de cochon.  Pour 10 pièces d'argent vous pouvez avoir la tête du cochon",
+    "Rumeur: Soeur garaele du temple de la chance a quitté le village quelques jours récemment, elle est revenu de son voyage blessés et visiblement pas reposé",
+    "Rumeur: Daran Edermath du verger est un ancien aventurier",
+    "Rumeur: Thel Dendrar un ébéniste local à tenu tête aux Redbrands il y a de ça une dizaine de jours.  Ils l'ont tué, plusieurs villageois ont été témoin.  Sa femme et ses enfants ont disparu par la suite",
+    "Rumeur: Carp qui vit à la ferme Alderleaf (cochon) dit avoir trouvé un tunnel secret",
+    "Rumeur: Les Redbrands harcèlent tous les commercants sauf la Phandalin Miner's Exchange",
+  ],
   exteriorImageUrl:
     "https://db4sgowjqfwig.cloudfront.net/campaigns/245719/assets/1081260/Stonehill_Inn_cropped.jpg",
   interiorImageUrl:

@@ -15,6 +15,7 @@ export interface IDndLocation {
   readonly interiorImageUrl?: string;
   readonly interiorMapUrl?: string;
   readonly loot?: string[];
+  readonly informations?: string[];
 }
 
 export interface IDndLocationProps {
@@ -64,6 +65,7 @@ const DndLocation = ({
     exteriorMapUrl,
     interiorImageUrl,
     interiorMapUrl,
+    informations,
   },
 }: IDndLocationProps) => {
   return (
@@ -105,9 +107,21 @@ const DndLocation = ({
 
       {loot && loot.length > 0 && (
         <>
-          <Collapsible id={""} text={`${name} Loot`}>
+          <Collapsible id={""} text={`Loot`}>
             <div style={subContainer}>
               {loot.map((item) => (
+                <div>{item}</div>
+              ))}
+            </div>
+          </Collapsible>
+        </>
+      )}
+
+      {informations && informations.length > 0 && (
+        <>
+          <Collapsible id={""} text={`Information`}>
+            <div style={subContainer}>
+              {informations.map((item) => (
                 <div>{item}</div>
               ))}
             </div>
